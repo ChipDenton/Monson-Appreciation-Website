@@ -1,20 +1,20 @@
 h1 {
   font-size: 45px;
-  color: white;
+  color: #E6E6E8;
   text-align: center;
   text-shadow: 2px 2px 5px black;
   padding: 0px;
 }
 h2 {
   font-size: 25px;
-  color: white;
+  color: #E6E6E8;
   text-align: center;
   text-shadow: 2px 2px 5px black;
 
 }
 
 body {
-  color: white;
+  color: #E6E6E8;
   background-color: #3c4d71;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ a {
 }
 
 p {
-  color: white;
+  color: #E6E6E8;
   font-family: "Open Sans",sans-serif;
   font-size: 14px;
   margin: 0px;
