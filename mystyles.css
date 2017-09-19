@@ -1,32 +1,45 @@
 h1 {
-  font-size: 18px; 
-  color: black; 
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  padding: 0px;
+}
+h2 {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+
 }
 
 body {
-  color: white; 
-  background-color: blue; 
-  display: flex; 
+  color: white;
+  background-color: #3c4d71;
+  display: flex;
   flex-direction: column;
+  font-family: "Open Sans",sans-serif;
+  padding: 10px;
+  margin-top: 15px;
+
 }
 
-a { 
-  font-weight: bold; 
+a {
+  font-weight: bold;
 }
 
-p { 
-  color: white; 
-  font-family: Helvetica; 
-  font-size: 14px;  
+p {
+  color: white;
+  font-family: "Open Sans",sans-serif;
+  font-size: 14px;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
 }
 
 #container {
   margin:0px;
-  padding:0px;
+  padding:10px;
   width:100%;
-  position:relative;	
 }
 
 #banner {
@@ -39,37 +52,37 @@ p {
   width:25%;
   min-width: 115px;
   text-align:left;
-  background-color:white;
-  color:green;
+  background-color:#E6E6E8;
+  color:97999b;
   margin-right: 40px;
   flex: 1;
-} 
+}
 
 #content {
   float:left;
   text-align:left;
-  background:blue;
+  background:3c4d71;
   flex:1
 }
 
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 7px;
 }
 
 li a {
   display: block;
-  background-color:black;
-  color: green;
+  background-color:#E6E6E8;
+  color: #97999b;
 }
 
 li a.active {
-  background-color: gray;
-  color: blue;
+  background-color: #D9D9D9;
+  color: #97999b;
 }
 
 li a:hover:not(.active) {
-  background-color: black;
-  color: blue;
+  background-color: #D9D9D9;
+  color: 97999b;
 }
