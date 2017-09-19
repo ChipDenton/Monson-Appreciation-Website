@@ -2,27 +2,88 @@
 <html>
   <head>
     <link href="mystyles.css" rel="stylesheet" type="text/css" />
+
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+<script>
+    function talkFunction(link) {
+ 	document.getElementById("video").src = link;
+	};
+</script>
   <head>
 
   <body>
-    <div id="container">
+	<header>
+        	<h1>Thomas S. Monson</h1>
+        	<h2>About</h2>
+  	</header>
 
-      <div id="banner">
-        <h1>Thomas S. Monson</h1>
-      </div>
+    <div id="container">
 
       <div id="sidebar">
 	<ul id="list-nav">
 	  <li><a href="index.htm">Home</a></li>
-	  <li><a href="about.html">About President Monson</a></li>
+	  <li><a href="about.html">About</a></li>
 	  <li><a class="active" href="talks.html">Talks</a></li>
 	  <li><a href="books.html">Books</a></li>
 	</ul>
       </div>
 
       <div id="content">
-	<p>Monson Talks</p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/_ss6K0m22sA" frameborder="0" allowfullscreen></iframe>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for talks.."></br>
+	<iframe id="video" width="400" height="225" src="https://www.youtube.com/embed/8VJD2eMcX8M" frameborder="0" allowfullscreen></iframe>
+
+
+ <div id="table">
+<table id="myTable">
+  <tr class="header">
+    <th>Name</th>
+    <th>When</th>
+    <th>Link</th>
+  </tr>
+  <tr>
+    <td>Kindness, Charity, and Love</td>
+    <td>April 2017</td>
+    <td><img src="img/youtube.png" height=20px onclick="talkFunction('https://www.youtube.com/embed/8VJD2eMcX8M')"></td>
+  </tr>
+  <tr>
+    <td>The Power of the Book of Mormon</td>
+    <td>April 2017</td>
+    <td><img src="img/youtube.png" height=20px onclick="talkFunction('https://www.youtube.com/embed/_ss6K0m22sA')"></td>
+  </tr>
+  <tr>
+    <td>Principles and Promises</td>
+    <td>October 2016</td>
+    <td>    </td>
+  </tr>
+  <tr>
+    <td>The Perfect Path to Happiness</td>
+    <td>October 2016</td>
+    <td>    </td>
+  </tr>
+</table>
+</div>
+
       </div>
 
     </div>
