@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Open Sans",sans-serif;
-  padding: 10px;
+  padding: 20px;
   margin-top: 15px;
 
 }
@@ -36,7 +36,9 @@ p {
   margin: 0px;
   padding: 10px;
 }
-
+div {
+  padding: 20px;
+}
 #container {
   margin:0px;
   padding:0px;
@@ -52,6 +54,7 @@ p {
   color:97999b;
   margin-right: 40px;
   flex: 1;
+  padding: 0px;
 }
 
 #content {
@@ -64,7 +67,7 @@ p {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 7px;
+    padding: 9px;
 }
 
 li a {
@@ -74,8 +77,8 @@ li a {
 }
 
 li a.active {
-  background-color: #D9D9D9;
-  color: #97999b;
+  background-color: #E6E6E8;
+  color: 97999b;
 }
 
 li a:hover:not(.active) {
