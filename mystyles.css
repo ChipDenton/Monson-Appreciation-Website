@@ -1,3 +1,7 @@
+html {
+    overflow-y:scroll;
+}
+
 h1 {
   font-size: 45px;
   color: #E6E6E8;
