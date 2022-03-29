@@ -52,6 +52,17 @@ h2 {
   margin-left: calc(20% + 10px);
 }
 
+iframe {
+  width: 50%;
+}
+
+/* Medium Screens */
+@media (max-width: 979px) {
+  iframe {
+    width: 75%;
+  }
+}
+
 /* Small Screens */
 @media (max-width: 639px) {
   #sidebar {
@@ -62,6 +73,10 @@ h2 {
   #main-content {
     width: 100%;
     margin-left: 0;
+  }
+
+  iframe {
+    width: 100%;
   }
 }
 
@@ -96,13 +111,6 @@ li:hover {
   background-color: #495d86;
   color: white;
 }
-
-iframe {
-  width: 100%;
-  --myWidth: 100%;
-  height: calc(var(--myWidth) / 16 * 9);
-}
-
 
 /* img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
