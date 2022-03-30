@@ -88,6 +88,10 @@ a {
   font-weight: bold;
 }
 
+#main-content a {
+  color: wheat;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -118,19 +122,19 @@ li:hover {
 } */
 
 
-#myTable {
+#talkTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
     font-size: 18px; /* Increase font-size */
 }
 
-#myTable th, #myTable td {
+#talkTable th, #talkTable td {
     text-align: left; /* Left-align text */
     padding: 12px; /* Add padding */
 }
 
-#myTable tr {
+#talkTable tr {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd; 
 }
