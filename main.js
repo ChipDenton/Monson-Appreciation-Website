@@ -1,8 +1,8 @@
-// async function myFunction() {
-
 function loadTalk(link) {
   console.log("loadTalk")
   document.getElementById("video").src = link;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 function searchForTalks() {
@@ -30,10 +30,10 @@ function searchForTalks() {
 const home = document.getElementById("home");
 const talks = document.getElementById("talks");
 const books = document.getElementById("books");
-const gallery = document.getElementById("gallery");
 
 const mainContent = document.getElementById("main-content");
 const subHeader = document.getElementById("subHeader");
+const legend = document.getElementById("legend");
 
 home.onclick = () => {
   if (selected !== "home") {
@@ -49,13 +49,14 @@ home.onclick = () => {
   }
 
   window.onresize = () => {}
+  legend.innerHTML = "";
 }
 
 talks.onclick = async () => {
 
   if (selected !== "talks") {
     selected = "talks";
-    subHeader.innerHTML = "Talks";
+    subHeader.innerHTML = "Conference Talks";
 
     // Create Table of Videos
     tableStart = `
@@ -63,7 +64,8 @@ talks.onclick = async () => {
       <tr class="tableHeader">
         <th>Name</th>
         <th>Date</th>
-        <th>Watch</th>
+        <th class="centered-table-header">Watch</th>
+        <th class="centered-table-header">Read</th>
       </tr>
     `
 
@@ -78,7 +80,21 @@ talks.onclick = async () => {
     tableMid = "";
 
     jsonData.forEach(element => {
-      tableMid += "<tr><td>" + element[0] + "</td><td>" + element[1] + `</td><td><img src="img/youtube.png" height=20px onclick="loadTalk('` + element[2] + `')"></td></tr>`
+      tableMid += "<tr><td>" + element[0] + "</td><td>" + element[1] + '</td><td>'
+      
+      if (element[2] && element[2] !== "x") {
+        tableMid += `<img src="img/youtube.png" height=20px onclick="loadTalk('` + element[2] + `')">`
+      }
+      else if (element[2] === "x") {
+        tableMid += '<p class="centered-text">❌</p>'
+      }
+      tableMid += '</td>'
+
+      if (element.length > 3 && element[3]) {
+        tableMid += `<td><a href=`+element[3]+` target="_blank"><img src="img/read.jpg" height=20px></a></td>`
+      }
+
+      tableMid += '</tr>'
     });
 
     tableEnd = "</table>";
@@ -91,6 +107,12 @@ talks.onclick = async () => {
     let video = document.getElementById("video");
     let videoWidth = video.offsetWidth;
     video.style.height = (videoWidth * 9 / 16).toString() + "px";
+
+    legend.innerHTML = `
+    <img src="img/youtube.png" height=20px><p>Watch Video on this Page</p>
+    </br><img src="img/read.jpg" height=20px><p>Read Talk Outside this Site</p>
+    </br><p>❌</p><p>No Video Available</p>
+    `
   }
 
   window.onresize = () => {
@@ -109,18 +131,8 @@ books.onclick = () => {
   }
 
   window.onresize = () => {}
-}
-
-gallery.onclick = () => {
-  if (selected !== "gallery") {
-    selected = "gallery";
-    mainContent.innerHTML = "in development";
-    subHeader.innerHTML = "Gallery";
-  }
-
-  window.onresize = () => {}
+  legend.innerHTML = "";
 }
 
 let selected = "";
 home.click();
-// }

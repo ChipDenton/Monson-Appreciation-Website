@@ -1,5 +1,5 @@
 html {
-  overflow-y: auto;
+  overflow-y:scroll;
   width: 100%;
 }
 
@@ -48,6 +48,10 @@ h2 {
   margin-bottom: 30px;
 }
 
+#monson-img {
+  width:100%;
+}
+
 #main-content {
   margin-left: calc(20% + 10px);
 }
@@ -68,6 +72,10 @@ iframe {
   #sidebar {
     width: 100%;
     line-height: 4vh;
+  }
+
+  #monson-img {
+    display: none;
   }
 
   #main-content {
@@ -116,25 +124,38 @@ li:hover {
   color: white;
 }
 
-/* img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-} */
-
+img {
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 #talkTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
 }
 
 #talkTable th, #talkTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
 }
 
 #talkTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd; 
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd; 
+}
+
+.centered-text, .centered-table-header {
+  text-align: center !important;
+}
+
+#legend {
+  margin: 0;
+  font-size: initial;
+  color: black;
+  word-break: break-word;
+  line-height: initial;
 }
