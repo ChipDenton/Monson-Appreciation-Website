@@ -1,12 +1,10 @@
 function loadTalk(link) {
-  console.log("loadTalk")
   document.getElementById("video").src = link;
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 function searchForTalks() {
-  console.log("searchForTalks")
   // Declare variables 
   var input, filter, table, tr, td, i;
   input = document.getElementById("talkSearch");
@@ -75,8 +73,6 @@ talks.onclick = async () => {
       }
     });
 
-    console.log(jsonData)
-
     tableMid = "";
 
     jsonData.forEach(element => {
@@ -116,7 +112,6 @@ talks.onclick = async () => {
   }
 
   window.onresize = () => {
-    console.log('onreize')
     let video = document.getElementById("video");
     let videoWidth = video.offsetWidth;
     video.style.height = (videoWidth * 9 / 16).toString() + "px";
@@ -126,7 +121,31 @@ talks.onclick = async () => {
 books.onclick = () => {
   if (selected !== "books") {
     selected = "books";
-    mainContent.innerHTML = "in development";
+    mainContent.innerHTML = `
+    <p>Monson has written a number of books, some of which are compilations of speeches given by him, or of quotes. <br>
+    Others discuss particular LDS gospel themes. He also wrote Faith Rewarded which is an autobiographical account  <br>
+    about his work in leading the church in Eastern Europe.</p>
+    <ul style="list-style-type:square;">
+      <a target="_blank" href="https://deseretbook.com/p/pathways-perfection-thomas-s-monson-2762"><li>(1973) - Pathways to Perfection</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/search-christmas-spirit-booklet-thomas-s-monson-2758"><li>(1977) - In Search of the Christmas Spirit</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/your-best-self-thomas-s-monson-2772"><li>(1979) - Be Your Best Self</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/conference-classics-vol-1-thomas-s-monson-2771"><li>(1981) - Conference Classics</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/conference-classics-vol-2-thomas-s-monson-2770"><li>(1983) - Conference Classics Volume II</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/christmas-gifts-blessings-thomas-s-monson-69000"><li>(1983) - Christmas Gifts, Christmas Blessings</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/conference-classics-vol-3-thomas-s-monson-2769"><li>(1984) - Conference Classics Volume III,</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/favorite-quotations-collection-thomas-s-monson-2767"><li>(1985) - Favorite Quotations from the Collection of Thomas S. Monson</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/live-good-life-thomas-s-monson-2764"><li>(1988) - Live the Good Life</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/search-jesus-christmas-message-thomas-s-monson-2761"><li>(1992) - The Search for Jesus</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/inspiring-experiences-build-faith-life-ministry-thomas-s-monson-2765"><li>(1994) - Inspiring Experiences That Build Faith: From the Life and Ministry of Thomas S. Monson</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/faith-rewarded-personal-account-prophetic-promises-east-german-saints-thomas-s-monson-2768"><li>(1996) - Faith Rewarded: A Personal Account of Prophetic Promises to the East German Saints</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/invitation-exaltation-thomas-s-monson-2773"><li>(1997) - Invitation to Exaltation</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/meeting-your-goliath-thomas-s-monson-2763"><li>(1997) - Meeting your Goliath</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/christmas-dress-ellen-thomas-s-monson-2760"><li>(2004) - A Christmas Dress for Ellen</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/teachings-thomas-s-monson-79694"><li>(2011) - Teachings of Thomas S. Monson</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/prophets-voice-messages-thomas-s-monson-85372"><li>(2012) - A Prophet's Voice: Messages from Thomas S. Monson</li></a>
+      <a target="_blank" href="https://deseretbook.com/p/consider-blessings-thomas-s-monson-89741"><li>(2013) - Consider the Blessings: True Accounts of God's Hand in Our Lives</li></a>
+    </ul>
+    `;
     subHeader.innerHTML = "Books";
   }
 
